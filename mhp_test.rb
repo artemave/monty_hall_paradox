@@ -1,9 +1,12 @@
+#!/usr/bin/ruby 
+
 require 'pp'
 require './lib/game'
 
-res = {}
-res[:door_changed] = 0 # being able not to write this is where perl rules
-res[:door_not_changed] = 0
+res = {
+  :door_changed => 0,
+  :door_not_changed => 0
+}
 
 10000.times do |i|
   game = Game.new
