@@ -10,15 +10,17 @@ res = {
 
 10000.times do |i|
   game = Game.new
-  key = :door_not_changed
 
   game.pick_door
   game.open_false_door
-  if i.odd?
-    game.swap_doors
-    key = :door_changed
-  end
-  res[key]+= 1 if game.won?
+  choice = if i.odd?
+          game.swap_doors
+          :door_changed
+        else
+          :door_not_changed
+        end
+
+  res[choice]+= 1 if game.won?
 end
 
 pp res
