@@ -10,9 +10,10 @@ res = {
 
 10000.times do |i|
   game = Game.new
+  key = :door_not_changed
+
   game.pick_door
   game.open_false_door
-  key = :door_not_changed
   if i.odd?
     game.swap_doors
     key = :door_changed
