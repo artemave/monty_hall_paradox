@@ -13,7 +13,7 @@ res = {
   game.pick_door
   game.open_false_door
   key = :door_not_changed
-  if i % 2 == 0
+  if i.odd?
     game.swap_doors
     key = :door_changed
   end
